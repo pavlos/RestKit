@@ -436,8 +436,13 @@ typedef NSUInteger RKTableControllerState;
 - (void)tableController:(RKAbstractTableController *)tableController willRemoveSwipeView:(UIView *)swipeView fromCell:(UITableViewCell *)cell forObject:(id)object;
 
 // Cells
+- (void)tableController:(RKAbstractTableController *)tableController didProvisionCell:(UITableViewCell *)cell forRowAtIndexPath:(NSIndexPath *)indexPath; 
 - (void)tableController:(RKAbstractTableController *)tableController willDisplayCell:(UITableViewCell *)cell forObject:(id)object atIndexPath:(NSIndexPath *)indexPath;
 - (void)tableController:(RKAbstractTableController *)tableController didSelectCell:(UITableViewCell *)cell forObject:(id)object atIndexPath:(NSIndexPath *)indexPath;
+
+// Sections
+- (CGFloat)tableController:(RKAbstractTableController *)tableController heightForHeaderInSection:(NSInteger)sectionIndex;
+- (CGFloat)tableController:(RKAbstractTableController *)tableController heightForFooterInSection:(NSInteger)sectionIndex;
 
 @end
 
