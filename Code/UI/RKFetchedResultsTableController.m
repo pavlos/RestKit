@@ -637,6 +637,11 @@
     UITableViewCell* cell = [self cellForObjectAtIndexPath:indexPath];
 
     RKLogTrace(@"%@ cellForRowAtIndexPath:%@ = %@", self, indexPath, cell);
+    
+    if ([self.delegate respondsToSelector:@selector(tableController:didProvisionCell:forRowAtIndexPath:)]) {
+        [self.delegate tableController:self didProvisionCell:cell forRowAtIndexPath:indexPath];
+    }
+    
     return cell;
 }
 
